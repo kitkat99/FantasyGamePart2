@@ -7,7 +7,7 @@ public class Player extends AbstractPlayer {
     }
 
     @Override
-    public List<Slot> playerSlotList() {
+    public List<Slot> createPlayerSlotList() {
         return List.of(new Slot(SlotType.CHEST), new Slot(SlotType.NECK), new Slot(SlotType.HAND), new Slot(SlotType.FINGER), new Slot(SlotType.LEGS));
     }
 
