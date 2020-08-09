@@ -1,7 +1,7 @@
 import java.util.Collections;
 import java.util.List;
 
-public class FlimsyLeatherArmor implements Item, Equippable {
+public class FlimsyLeatherArmor implements Equippable {
     private final String itemName = "Flimsy Leather Armor";
     private List<ItemEffect> itemEffectsList = Collections.EMPTY_LIST;
 

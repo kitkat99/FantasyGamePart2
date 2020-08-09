@@ -40,7 +40,7 @@ public class Player extends AbstractPlayer {
 
     @Override
     public int getStrength() {
-        return getBaseStrength()+getLevelInt();
+        return getBaseStrength()+getLevelStr();
     }
 
     @Override

@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class RelicOfTheAncients implements Item, Equippable {
+public class RelicOfTheAncients implements Equippable {
     private final String itemName = "Relic Of The Ancients";
     private List<ItemEffect> itemEffectsList = List.of(new ItemEffect(EffectType.HP_BOOST, 80), new ItemEffect(EffectType.DAMAGE_BOOST, 42));;
 

@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class WristbandOfMana implements Item, Equippable {
+public class WristbandOfMana implements Equippable {
     private final String itemName = "Wristband Of Mana";
     private List<ItemEffect> itemEffectsList = List.of(new ItemEffect(EffectType.MANA_BOOST, 5));
 

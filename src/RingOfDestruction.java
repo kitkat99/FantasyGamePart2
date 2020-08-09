@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class RingOfDestruction implements Item,Equippable {
+public class RingOfDestruction implements Equippable {
     private final String itemName = "Ring Of Destruction";
     private List<ItemEffect> itemEffectsList = List.of( new ItemEffect(EffectType.DAMAGE_BOOST, 12));;
 

@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class RingOfHealth implements Item, Equippable {
+public class RingOfHealth implements Equippable {
     private final String itemName = "Ring Of Health";
     private List<ItemEffect> itemEffectsList = List.of(new ItemEffect(EffectType.HP_BOOST, 10), new ItemEffect(EffectType.DAMAGE_BOOST, 3));;
 

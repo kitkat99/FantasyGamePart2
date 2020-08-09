@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class MinorHealthPotion implements Item,Usable {
+public class MinorHealthPotion implements Usable {
     private final String itemName = "Minor Health Potion";
     private int usesLeft = 10;
     private List<ItemEffect> itemEffectsList = List.of( new ItemEffect(EffectType.HP_REPLENISH, 5));;
