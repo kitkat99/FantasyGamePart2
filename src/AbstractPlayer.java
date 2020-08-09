@@ -5,12 +5,18 @@ import java.util.Map;
 
 public abstract class
 AbstractPlayer {
+    private String playerName;
     private int hitPoints;
     private int manaPoints;
     private int baseStrength;
     private int baseIntelligence;
     private int experiencePoints;
     private List<Item> Inventory = new ArrayList<>();
+    public List<Slot> playerSlotList = new ArrayList<>();
+
+    public String getPlayerName() {
+        return playerName;
+    }
 
     public int getHitPoints() {
         return hitPoints;
@@ -66,7 +72,7 @@ AbstractPlayer {
         return bonusMap.get(level);
     }
 
-    public abstract List<Slot> createPlayerSlotList();
+    public abstract List<Slot> setPlayerSlotList();
 
     public void pickUp(Item item) {
         Inventory.add(item);
@@ -82,13 +88,24 @@ AbstractPlayer {
 
     public boolean isItemEquipped(Item item) {
         List<Item> equippedItems = new ArrayList<>();
-        this.createPlayerSlotList().forEach(e -> equippedItems.addAll(e.getListOfItems()));
+        this.getPlayerSlotList().forEach(e -> equippedItems.addAll(e.getListOfItems()));
         return equippedItems.stream().anyMatch(x -> x.equals(item));
+    }
+
+    public List<Slot> getPlayerSlotList() {
+        return playerSlotList;
+    }
+
+    public void printInventory() {
+        System.out.println("Items in "+getPlayerName()+" Inventory");
+        for (Item i : Inventory) {
+            System.out.println(i.getItemName());
+        }
     }
 
     public List<Item> getEquippedItems() {
         List<Item> equippedItems = new ArrayList<>();
-        this.createPlayerSlotList().forEach(e -> equippedItems.addAll(e.getListOfItems()));
+        this.getPlayerSlotList().forEach(e -> equippedItems.addAll(e.getListOfItems()));
         return equippedItems;
     }
 
@@ -133,5 +150,22 @@ AbstractPlayer {
 
     public void removeXP(int XPoints) {
         experiencePoints -= XPoints;
+    }
+
+    public String playerStats() {
+        return " Hit Points: " + getMaxHP()
+                + " Mana Points: " + getMaxMana()
+                + " Strength: " + getStrength()
+                + " Damage: " + getAttackDamage()
+                + " Intelligence: " + getIntelligence();
+
+    }
+
+    public List<Item> getInventory() {
+        return Inventory;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }

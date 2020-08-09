@@ -2,13 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player extends AbstractPlayer {
-    public Player(){
+    public Player(String name){
         super(10, 10, 20 ,10);
+        playerSlotList = setPlayerSlotList();
+        setPlayerName(name);
     }
 
     @Override
-    public List<Slot> createPlayerSlotList() {
-        return List.of(new Slot(SlotType.CHEST), new Slot(SlotType.NECK), new Slot(SlotType.HAND), new Slot(SlotType.FINGER), new Slot(SlotType.LEGS));
+    public  List<Slot> setPlayerSlotList() {
+        return  List.of(new Slot(SlotType.CHEST, 1), new Slot(SlotType.NECK,1), new Slot(SlotType.HAND,2), new Slot(SlotType.FINGER,10), new Slot(SlotType.LEGS,2));
     }
 
     @Override

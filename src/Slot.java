@@ -1,11 +1,12 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Slot {
     private SlotType slotType;
     private int capacity;
-    private Set<Item> listOfItems;
+    private Set<Item> listOfItems = new HashSet<>();
 
     public Set<Item> getListOfItems() {
         return listOfItems;
@@ -15,8 +16,13 @@ public class Slot {
         return capacity;
     }
 
-    public Slot(SlotType slotType) {
+    public Slot(SlotType slotType, int capacity) {
         this.slotType = slotType;
+        this.capacity = capacity;
+    }
+
+    public SlotType getSlotType() {
+        return slotType;
     }
 
     public boolean equip(Item item) throws IllegalArgumentException {
